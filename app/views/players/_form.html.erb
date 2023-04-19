@@ -1,0 +1,9 @@
+<div class="form-container">
+  <%= simple_form_for @player do |f| %>
+    <%= f.input :name %>
+    <%= f.input :position %>
+    <%= f.input :age %>
+    <%= f.input :number %>
+    <%= f.button :submit, class:"btn btn-success" %>
+  <% end %>
+</div>

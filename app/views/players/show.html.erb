@@ -1,0 +1,9 @@
+<div class="container mt-4">
+  <h1><%= @player.number %></h1>
+  <h2><%= @player.name %></h2>
+  <h3><%= @player.position %></h3>
+  <p>Age <%= @player.age %> years</p>
+  <%= link_to "Update player", edit_player_path(@player), class:"btn btn-primary" %>
+  <%= link_to "Delete player", player_path(@player), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-danger" %>
+  <%= link_to "Back to Team", players_path, class:"btn btn-success" %>
+</div>

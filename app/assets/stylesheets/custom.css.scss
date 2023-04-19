@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'celtics';
+  src: url('celtics.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body, h1, h2, h3 {
+  font-family: 'celtics', sans-serif;
+  color:white;
+}

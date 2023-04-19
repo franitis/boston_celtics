@@ -1,0 +1,18 @@
+<div class="container mt-4 text-center">
+  <%= image_tag("logo.png", class: "logo") %>
+  <h1>Boston Celtics</h1>
+  <h2>Squad 2022/2023</h2>
+  <div class="d-flex flex-wrap players-container text-start mt-3">
+    <% @players.each do |player| %>
+      <%= link_to player_path(player), style:"text-decoration:none; color:white;" do%>
+        <div class="mx-3 my-3 card-player" >
+          <li>Name: <%= player.name %></li>
+          <li>Position: <%= player.position %></li>
+          <li>Age: <%= player.age %> years</li>
+          <li>Number: <%= player.number %></li>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <%= link_to "Create new player", new_player_path, class:"btn btn-success mt-2" %>
+</div>
