@@ -5,8 +5,12 @@
   text-decoration: unset;
   background-color: rgba(0, 131, 71, 0.5);
   width: 250px;
+  box-shadow: 10px 5px 5px black;
 }
 
 .card-player:hover {
-  background-color: rgba(0, 131, 71, 1);
+  background-color: white;
+  color:rgb(0, 131, 71);
+  border-color: rgb(0, 131, 71);
+  box-shadow: 10px 5px 5px black;
 }

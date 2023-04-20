@@ -6,4 +6,13 @@
   width: 300px;
   height: 300px;
   margin: 200px auto;
+
+  .form-label {
+    text-shadow: 10px 5px 5px black;
+  }
+
+  .form-control {
+    box-shadow: 10px 5px 5px black;
+    color:rgb(0, 131, 71);
+  }
 }
