@@ -1,4 +1,7 @@
 <div class="container mt-4">
+  <div>
+    <%= image_tag @player.photo, width:200, crop: :fill if @player.photo.attached? %>
+  </div>
   <h1><%= @player.number %></h1>
   <h2><%= @player.name %></h2>
   <h3><%= @player.position %></h3>

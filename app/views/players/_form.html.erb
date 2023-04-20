@@ -4,6 +4,7 @@
     <%= f.input :position %>
     <%= f.input :age %>
     <%= f.input :number %>
+    <%= f.input :photo, as: :file %>
     <%= f.button :submit, class:"btn btn-boston" %>
     <%= link_to "Back to team", players_path, class:"btn btn-boston"%>
   <% end %>
