@@ -2,11 +2,20 @@
   <%= image_tag("logo.png", class: "logo") %>
   <h1>Boston Celtics</h1>
   <h2>Squad 2022/2023</h2>
+  <%= form_with url: players_path, method: :get, class: "d-flex pt-5 pb-4 justify-content-center gap-2" do |f| %>
+    <%= f.text_field :query, value: params[:query], placeholder: "Search player by name" %>
+    <%= f.submit "Search", class: 'btn-boston', style:"border-color:dark-gray; padding:7px; border-style:outset; border-width:2px; text-decoration:none;" %>
+    <%= link_to "Clear", players_path, style: "width: 60px; text-decoration: underline; align-self:center; color:white;" %>
+  <% end %>
   <div class="d-flex flex-wrap players-container text-start mt-3">
     <% @players.each do |player| %>
       <%= link_to player_path(player), style:"text-decoration:none; color:white;" do%>
         <div class="mx-3 my-3 card-player" >
-          <%= image_tag player.photo, width:200, crop: :fill if player.photo.attached? %>
+          <%  if player.images.attached? %>
+            <% player.images.each do |image| %>
+              <%= image_tag image, width:200, crop: :fill %>
+            <% end %>
+          <% end %>
           <li>Name: <%= player.name %></li>
           <li>Position: <%= player.position %></li>
           <li>Age: <%= player.age %> years</li>

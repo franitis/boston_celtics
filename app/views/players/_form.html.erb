@@ -4,7 +4,12 @@
     <%= f.input :position %>
     <%= f.input :age %>
     <%= f.input :number %>
-    <%= f.input :photo, as: :file %>
+    <div data-controller="add-file">
+      <div class="images">
+        <%= f.input :images, as: :file, input_html: { multiple: true, data: { controller: "add-file#addFile" } }  %>
+      </div>
+    </div>
+    <div data-add-file-target="files"></div>
     <%= f.button :submit, class:"btn btn-boston" %>
     <%= link_to "Back to team", players_path, class:"btn btn-boston"%>
   <% end %>

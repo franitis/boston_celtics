@@ -1,6 +1,10 @@
-<div class="container mt-4">
+<div class="container mt-5 w-100">
+  <h1 class="text-center"><%= @player.name %></h1>
+  <h2 class="text-center"><%= @player.number %></h2>
   <div>
-    <%= image_tag @player.photo, width:200, crop: :fill if @player.photo.attached? %>
+      <% @player.images.each do |image| %>
+        <%= image_tag image, width:200, crop: :fill %>
+      <% end %>
   </div>
   <h1><%= @player.number %></h1>
   <h2><%= @player.name %></h2>

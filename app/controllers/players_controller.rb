@@ -2,6 +2,9 @@ class PlayersController < ApplicationController
   before_action :set_player, only: %i[show edit update destroy]
   def index
     @players = Player.all
+    if params[:query].present?
+      @players = @players.where("name ILIKE ?", "%#{params[:query]}%")
+    end
   end
 
   def show
@@ -37,6 +40,6 @@ class PlayersController < ApplicationController
   end
 
   def player_params
-    params.require(:player).permit(:name, :position, :age, :number, :photo)
+    params.require(:player).permit(:name, :position, :age, :number, images: [])
   end
 end
