@@ -1,14 +1,19 @@
 import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
-  static targets = ["files"]
+  static targets = ["files"];
+
+  connect() {
+    console.log("Hello addfile");
+  }
 
   addFile(event) {
-    console.log("Hello")
     const originalInput = event.target
     const originalParent = originalInput.parentNode
 
-    this.filesTarget.append(originalInput)
+    const selectedFile = document.createElement("div")
+    selectedFile.className = "selected-file"
+    selectedFile.append(originalInput)
 
     const newInput = originalInput.cloneNode()
 

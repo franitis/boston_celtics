@@ -1,15 +1,13 @@
 <div class="form-container">
-  <%= simple_form_for @player do |f| %>
+  <%= simple_form_for @player, data: { controller: "add-file" } do |f| %>
     <%= f.input :name %>
     <%= f.input :position %>
     <%= f.input :age %>
     <%= f.input :number %>
-    <div data-controller="add-file">
-      <div class="images">
-        <%= f.input :images, as: :file, input_html: { multiple: true, data: { controller: "add-file#addFile" } }  %>
-      </div>
+    <div class="images">
+    <%= f.input :images, as: :file, input_html: { multiple: true, data: { action: "add-file#addFile" } }  %>
     </div>
-    <div data-add-file-target="files"></div>
+    <div data-add-file-target="files" class="new-file" ></div>
     <%= f.button :submit, class:"btn btn-boston" %>
     <%= link_to "Back to team", players_path, class:"btn btn-boston"%>
   <% end %>
