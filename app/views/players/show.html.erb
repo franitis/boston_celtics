@@ -2,9 +2,25 @@
   <h1 class="text-center"><%= @player.name %></h1>
   <h2 class="text-center"><%= @player.number %></h2>
   <div>
-      <% @player.images.each do |image| %>
-        <%= image_tag image, width:200, crop: :fill %>
-      <% end %>
+    <!-- Slider main container -->
+  </div>
+  <div data-controller="carousel" class="swiper mySwiper swiper-initialized swiper-horizontal swiper-backface-hidden"
+    data-carousel-options-value='{
+    "pagination": { "el": ".swiper-pagination",
+                    "dynamicBullets": "true" },
+    "navigation": { "nextEl": ".swiper-button-next",
+                    "prevEl": ".swiper-button-prev"}}'>
+    <!-- Additional required wrapper -->
+      <div class="swiper-wrapper" id="swiper-wrapper-01aa7286c70f5387" aria-live="polite" style="transition-duration: 0ms; transform: translate3d(-2722.67px, 0px, 0px);">
+        <!-- Slides --><% @player.images.each do |image| %>
+          <%= image_tag image, class:"swiper-slide" %>
+        <% end %>
+      </div>
+      <!-- Pagination (... or 1/10 or progress bar) -->
+      <div class="swiper-pagination"></div>
+      <!-- Navigation buttons (< >) -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
   </div>
   <h1><%= @player.number %></h1>
   <h2><%= @player.name %></h2>

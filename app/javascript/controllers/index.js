@@ -9,3 +9,6 @@ application.register("hello", HelloController)
 
 import addFile from "./add_file_controller"
 application.register("add-file", addFile)
+
+import Carousel from "stimulus-carousel"
+application.register("carousel", Carousel)

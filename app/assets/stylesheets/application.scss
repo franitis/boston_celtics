@@ -11,6 +11,9 @@
 @import "components/index";
 @import "pages/index";
 
+// Carousel JS
+@import "swiper/swiper-bundle";
+
 body {
   background-image: url('background.jpg');
   background-size: cover;
