@@ -4,8 +4,9 @@
     <%= f.input :position %>
     <%= f.input :age %>
     <%= f.input :number %>
+    <%= f.input :bio %>
     <div class="images">
-    <%= f.input :images, as: :file, input_html: { multiple: true, data: { action: "add-file#addFile" } }  %>
+      <%= f.input :images, as: :file, input_html: { multiple: true, data: { action: "add-file#addFile" } }  %>
     </div>
     <div data-add-file-target="files" class="new-file" ></div>
     <%= f.button :submit, class:"btn btn-boston" %>

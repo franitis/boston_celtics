@@ -1,11 +1,18 @@
 .card-player {
   border-style: solid;
   border-color: white;
-  padding: 20px;
   text-decoration: unset;
   background-color: rgba(0, 131, 71, 0.5);
   width: 250px;
   box-shadow: 10px 5px 5px black;
+  img {
+    width:100%;
+    vertical-align: middle;
+    border-style: none;
+  };
+  .card-data {
+    padding: 20px;
+  }
 }
 
 .card-player:hover {
@@ -13,4 +20,6 @@
   color:rgb(0, 131, 71);
   border-color: rgb(0, 131, 71);
   box-shadow: 10px 5px 5px black;
+  width: 400px;
+  font-size: 25px;
 }

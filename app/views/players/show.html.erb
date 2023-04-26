@@ -1,19 +1,21 @@
 <div class="container mt-5 w-100">
   <h1 class="text-center"><%= @player.name %></h1>
   <h2 class="text-center"><%= @player.number %></h2>
-  <div>
-    <!-- Slider main container -->
-  </div>
-  <div data-controller="carousel" class="swiper mySwiper swiper-initialized swiper-horizontal swiper-backface-hidden"
+  <!-- Slider main container -->
+  <div class="d-flex">
+    <div data-controller="carousel" class="swiper mySwiper swiper-initialized swiper-horizontal swiper-backface-hidden"
     data-carousel-options-value='{
+    "loop": true,
+    "autoplay": { "delay": 2500,
+                  "disableOnInteraction": false},
     "pagination": { "el": ".swiper-pagination",
                     "dynamicBullets": "true" },
     "navigation": { "nextEl": ".swiper-button-next",
                     "prevEl": ".swiper-button-prev"}}'>
-    <!-- Additional required wrapper -->
-      <div class="swiper-wrapper" id="swiper-wrapper-01aa7286c70f5387" aria-live="polite" style="transition-duration: 0ms; transform: translate3d(-2722.67px, 0px, 0px);">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper" id="swiper-wrapper-8b3b32d81881b3b3" aria-live="polite" style="transition-duration: 0ms; transform: translate3d(-8752px, 0px, 0px);">
         <!-- Slides --><% @player.images.each do |image| %>
-          <%= image_tag image, class:"swiper-slide" %>
+          <%= image_tag image, class:"swiper-slide", role:"group" %>
         <% end %>
       </div>
       <!-- Pagination (... or 1/10 or progress bar) -->
@@ -21,12 +23,16 @@
       <!-- Navigation buttons (< >) -->
       <div class="swiper-button-prev"></div>
       <div class="swiper-button-next"></div>
+    </div>
+    <div class="container">
+      <h1><%= @player.number %></h1>
+      <h2><%= @player.name %></h2>
+      <h3><%= @player.position %></h3>
+      <p>Age <%= @player.age %> years</p>
+      <%= link_to "Update player", edit_player_path(@player), class:"btn btn-boston" %>
+      <%= link_to "Delete player", player_path(@player), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-delete" %>
+      <%= link_to "Back to Team", players_path, class:"btn btn-boston" %>
+      <p><%= @player.bio %></p>
+    </div>
   </div>
-  <h1><%= @player.number %></h1>
-  <h2><%= @player.name %></h2>
-  <h3><%= @player.position %></h3>
-  <p>Age <%= @player.age %> years</p>
-  <%= link_to "Update player", edit_player_path(@player), class:"btn btn-boston" %>
-  <%= link_to "Delete player", player_path(@player), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-delete" %>
-  <%= link_to "Back to Team", players_path, class:"btn btn-boston" %>
 </div>

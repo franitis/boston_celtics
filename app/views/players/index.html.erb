@@ -12,14 +12,14 @@
       <%= link_to player_path(player), style:"text-decoration:none; color:white;" do%>
         <div class="mx-3 my-3 card-player" >
           <%  if player.images.attached? %>
-            <% player.images.each do |image| %>
-              <%= image_tag image, width:200, crop: :fill %>
-            <% end %>
+            <%= image_tag player.images.sample, crop: :fill %>
           <% end %>
-          <li>Name: <%= player.name %></li>
-          <li>Position: <%= player.position %></li>
-          <li>Age: <%= player.age %> years</li>
-          <li>Number: <%= player.number %></li>
+          <div class="card-data">
+            <li>Name: <%= player.name %></li>
+            <li>Position: <%= player.position %></li>
+            <li>Age: <%= player.age %> years</li>
+            <li>Number: <%= player.number %></li>
+          </div>
         </div>
       <% end %>
     <% end %>

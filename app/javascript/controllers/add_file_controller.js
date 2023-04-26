@@ -11,9 +11,7 @@ export default class extends Controller {
     const originalInput = event.target
     const originalParent = originalInput.parentNode
 
-    const selectedFile = document.createElement("div")
-    selectedFile.className = "selected-file"
-    selectedFile.append(originalInput)
+    this.filesTarget.append(originalInput)
 
     const newInput = originalInput.cloneNode()
 
