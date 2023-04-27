@@ -4,7 +4,7 @@
     <%= f.input :position %>
     <%= f.input :age %>
     <%= f.input :number %>
-    <%= f.input :bio %>
+    <%= f.input :bio, as: :text %>
     <div class="images">
       <%= f.input :images, as: :file, input_html: { multiple: true, data: { action: "add-file#addFile" } }  %>
     </div>

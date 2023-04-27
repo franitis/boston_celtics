@@ -3,7 +3,8 @@ class PlayersController < ApplicationController
   def index
     @players = Player.all
     if params[:query].present?
-      @players = @players.where("name ILIKE ?", "%#{params[:query]}%")
+      sql_subquery = "name ILIKE :query OR position ILIKE :query"
+      @players = @players.where(sql_subquery, query: "%#{params[:query]}%")
     end
   end
 
